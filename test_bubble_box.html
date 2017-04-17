@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+
+<link rel="stylesheet" href="jquery.chatbubble.css">
+
+<script src="http://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="jquery.chatbubble.min.js"></script>
+
+
+</head>
+
+<body>
+
+<ul id="messages"></ul>
+	<script>
+		var messages = ['Message 1', 'Message 2', 'Message 3']
+		$('#messages').chatBubble({
+		  messages: messages,typingSpeed: 40,
+
+		});
+	</script>
+</body>
+</html>

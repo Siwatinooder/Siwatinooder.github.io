@@ -1,0 +1,74 @@
+<html>
+<head>
+
+</head>
+<body>
+
+
+<script src="https://cdn.netpie.io/microgear.js"></script>
+
+<link rel="stylesheet" href="jquery.chatbubble.css">
+
+<script src="http://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+<script src="jquery.chatbubble.js"></script>
+
+
+<script>
+	const APPID = "TagMassage";
+	const KEY = "CNXQceMJ87OQuTc";
+	const SECRET = "y3eYNJEshdxhAiEsnBVsdF1s5";
+	const ALIAS = "sss";
+	window.messages = []
+
+	var microgear = Microgear.create({
+		key: KEY,
+		secret: SECRET,
+		alias : ALIAS
+	});
+
+	microgear.on('message',function(topic,msg) {
+		window.messages.push(msg)
+	});
+
+	microgear.on('connected', function() {
+		microgear.setAlias(ALIAS);
+//		document.getElementById("data").innerHTML = "Now I am connected with netpie...";
+	});
+
+	microgear.on('present', function(event) {
+		console.log(event);
+	});
+
+	microgear.on('absent', function(event) {
+		console.log(event);
+	});
+
+	microgear.resettoken(function(err) {
+		microgear.connect(APPID);
+	});
+</script>
+
+
+<p>
+	<div id="data" style="font-size: 13px; font-family: 'Sukhumvit Set Text'" >_____</div>
+</p>
+<ul id="messages"></ul>
+	<script>
+		setInterval(function() {
+			$('#messages').chatBubble({
+			  messages: messages,typingSpeed: 40,
+			});
+			window.messages = []
+		}, 5000);
+		
+		setInterval(function() {
+			$("#messages li").remove()
+		}, 10*1000)
+	</script>
+</body>
+</html>
+
+ <!--10s-->
+
+
+
