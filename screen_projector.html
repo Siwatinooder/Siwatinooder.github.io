@@ -1,19 +1,16 @@
-<!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
+
+</head>
+<body class="cb__list">
+
+
 <script src="https://cdn.netpie.io/microgear.js"></script>
 
-<link rel="stylesheet" href="jquery.chatbubble.min.css">
+<link rel="stylesheet" href="jquery.chatbubble.css">
 
 <script src="jquery-3.1.1.slim.min.js"></script>
 <script src="jquery.chatbubble.js"></script>
-
-</head>
-
-<body>
-
 
 
 <script>
@@ -22,7 +19,6 @@
 	const SECRET = "y3eYNJEshdxhAiEsnBVsdF1s5";
 	const ALIAS = "sss";
 	window.messages = []
-	window.messages2
 
 	var microgear = Microgear.create({
 		key: KEY,
@@ -32,6 +28,12 @@
 
 	microgear.on('message',function(topic,msg) {
 		window.messages.push(msg)
+		// console.log('date:', new Date().getTime(), msg)
+	 
+	    var $listItem = $('<li></li>');
+	    var $bubble = $('<div class="bubble">' +msg +'</div>');
+		$listItem.html($bubble);
+		$("#messages").prepend($listItem)
 	});
 
 	microgear.on('connected', function() {
@@ -40,11 +42,11 @@
 	});
 
 	microgear.on('present', function(event) {
-		console.log(event);
+		// console.log(event);
 	});
 
 	microgear.on('absent', function(event) {
-		console.log(event);
+		// console.log(event);
 	});
 
 	microgear.resettoken(function(err) {
@@ -54,23 +56,28 @@
 
 
 <p>
-	<div id="data" style="font-size: 13px; font-family: 'Sukhumvit Set Text'" >_____</div>
+	<div id="data" style="font-size: 13px; font-family: 'Sukhumvit Set Text'" ></div>
 </p>
 <ul id="messages"></ul>
 	<script>
-		setInterval(function() {
-			$('#messages').chatBubble({
-			  messages: messages,typingSpeed: 10,
-			});
-			window.messages = []
-		}, 2*1000);
+		// setInterval(function() {
+			console.log(messages.length)
+		// 	$('#messages').chatBubble({
+		// 	  messages: messages,typingSpeed: 40,
+		// 	});
+		// 	window.messages = []
+		// }, 5000);
 		
 		setInterval(function() {
-			$("#messages li").remove()
-		}, 30*1000)
+			// console.log($("#messages li").length)
+			if ($("#messages li").length > 50)
+				$("#messages li").remove()
+		}, 10*1000)
 	</script>
 </body>
 </html>
+
+ <!--10s-->
 
 
 

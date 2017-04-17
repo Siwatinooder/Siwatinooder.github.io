@@ -7,8 +7,8 @@
     var chatBubble = "chatBubble",
 
         defaults = {
-            typingSpeed: 40, // speed in words per minute
-            delay: 1000 // delay between adding messages
+            typingSpeed: 10, // speed in words per minute
+            delay: 100 // delay between adding messages
         };
 
     function Plugin( element, options ) {
@@ -53,7 +53,7 @@
             var words = message.split(' ').length; 
             var speed = (words / typingSpeed) * 6000;
 
-            if (speed < 1000) speed = 1000;
+            if (speed < 1000) speed = 100;
             if (speed > 10000) speed = 10000;
 
             $listItem.html($bubble);
