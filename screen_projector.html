@@ -22,6 +22,7 @@
 	const SECRET = "y3eYNJEshdxhAiEsnBVsdF1s5";
 	const ALIAS = "sss";
 	window.messages = []
+	window.messages2
 
 	var microgear = Microgear.create({
 		key: KEY,
@@ -59,7 +60,7 @@
 	<script>
 		setInterval(function() {
 			$('#messages').chatBubble({
-			  messages: messages,typingSpeed: 40,
+			  messages: messages,typingSpeed: 10,
 			});
 			window.messages = []
 		}, 2*1000);
