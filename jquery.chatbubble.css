@@ -4,13 +4,12 @@ ul {
 .cb__list {
   padding: 0;
   list-style-type: none;
-  font-family: "font-family: 'Kanit', sans-serif;";
   width: 1300px;
   margin: auto;
   overflow: hidden; }
   .cb__list .bubble {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
-    display: inline-block;
+    display: inline-block;  font-family: "font-family: 'Kanit', sans-serif;"; 
     line-height: 1.45em;
     border-radius: 3px;
     margin: 0 0 1em 0;
