@@ -17,8 +17,9 @@ ul {
     text-align: left;
     position: relative;
     padding: 6px 12px;
-    background: #FF6633;
+    background: #FFF;
     font-size: 14px;
+	color: crimson;
     border: none;
     max-width: 90%;
     min-width: 44px;
