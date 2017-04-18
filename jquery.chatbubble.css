@@ -4,6 +4,7 @@ ul {
 .cb__list {
   padding: 0;
   list-style-type: none;
+  font-family: "Sukhumvit Set Text";
   width: 1300px;
   margin: auto;
   overflow: hidden; }
@@ -12,6 +13,7 @@ ul {
     display: inline-block;
     line-height: 1.45em;
     border-radius: 3px;
+	font-family: 'Kanit';
     margin: 0 0 1em 0;
     text-align: left;
     position: relative;
